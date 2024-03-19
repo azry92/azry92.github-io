@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins-regular', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: #080808;
+    color: #fff;
+}
+#hexalev{
+    padding: 25px 0;
+    font-size: 30px;
+}
+.sub-title{
+    margin: 20px 0;
+    text-align: center;
+}
+.container {
+    padding: 10px 5%;
+}
+.slider-wrapper{
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+.slider{
+    display: flex;
+    aspect-ratio: 16 / 9;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0, 0, 0.25);
+    border-radius: 0.5rem;
+}
+.slider img{
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+.slider-nav{
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+}
+.slider-nav a{
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+.slider-nav a:hover{
+    opacity: 1;
+}
+
+/* -----------FYP------------ */
+.sequence-list{
+    display: grid;
+    grid-template-columns:subgrid;
+    grid-gap: 0.5rem;
+    margin-top: 50px;
+}
+.sequence-list div{
+    background: #262626;
+    padding: 30px;
+    font-size: 20px;
+    font-weight: 300;
+    border-radius: 10px;
+    text-align:left;
+    transition: background-color 0.5s, transform 0.5s;
+}
+.sequence-list div h1{
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align:left;
+}
+.sequence-list div p{
+    margin: 10px 0;
+    text-wrap: flex;
+}
+/* ---------css for small screen-------- */
+@media only screen and (max-width: 480px){
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+    .sub-title{
+        font-size: 40px;
+    }
+    .sequence-list{
+        flex-basis: 100%;
+        margin-top: 20px;
+    }
+    .sequence-list p{
+        font-size: 14px;
+    }
+}

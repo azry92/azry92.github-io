@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vertical Image Slider</title>
+<style>
+  /* Styles for the slider container */
+  .slider-container {
+    width: 100%;
+    overflow: hidden;
+    margin: 20px auto;
+    background-color: black; /* Set black background */
+    padding: 20px; /* Add padding for spacing */
+  }
+  
+  /* Styles for the slider */
+  .slider {
+    display: flex;
+    flex-wrap: wrap;
+    transition: transform 0.5s ease;
+  }
+  
+  /* Styles for each slide */
+  .slide {
+    flex: 0 0 100%; /* Display slides in one column on mobile */
+    max-width: 100%;
+    overflow: hidden;
+    margin-bottom: 10px; /* Adjust spacing between slides */
+  }
+
+  @media (min-width: 768px) {
+    /* For tablets and larger devices */
+    .slide {
+      flex: 0 0 33.33%; /* Display slides in three columns on tablet */
+      max-width: 33.33%;
+    }
+  }
+  
+  /* Style for the images */
+  .slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Style for the navigation buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* Set navigation button background color */
+    color: #000; /* Set navigation button text color */
+    border: none;
+    z-index: 1;
+  }
+  
+  .prev {
+    left: 0;
+  }
+  
+  .next {
+    right: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="slider-container">
+  <div class="slider">
+    <div class="slide"><img src="Images/crafting-1.jpg" alt="Image 1"></div>
+    <div class="slide"><img src="Images/crafting-2.jpg" alt="Image 2"></div>
+    <div class="slide"><img src="Images/crafting-3.jpg" alt="Image 3"></div>
+    <div class="slide"><img src="Images/crafting-4.jpg" alt="Image 3"></div>
+    <div class="slide"><img src="Images/crafting-5.jpg" alt="Image 3"></div>
+    <div class="slide"><img src="Images/crafting-6.jpg" alt="Image 3"></div>
+    <div class="slide"><img src="Images/crafting-7.jpg" alt="Image 3"></div>
+    <div class="slide"><img src="Images/crafting-8.jpg" alt="Image 3"></div>
+    <div class="slide"><img src="Images/crafting-9.jpg" alt="Image 3"></div>
+    <div class="slide"><img src="Images/crafting-10.jpg" alt="Image 3"></div>
+    <div class="slide"><img src="Images/crafting-11.jpg" alt="Image 3"></div>
+    <div class="slide"><img src="Images/crafting-12.jpg" alt="Image 3"></div>
+    <div class="slide"><img src="Images/crafting-13.jpg" alt="Image 3"></div>
+    <!-- Add more slides here -->
+  </div>
+</div>
+
+<button class="prev" onclick="moveSlide(-1)">❮ Prev</button>
+<button class="next" onclick="moveSlide(1)">Next ❯</button>
+
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+  
+  function moveSlide(direction) {
+    currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+    const offset = -currentIndex * 100;
+    document.querySelector('.slider').style.transform = `translateY(${offset}%)`;
+  }
+</script>
+
+</body>
+</html>
