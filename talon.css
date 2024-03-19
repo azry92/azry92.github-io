@@ -21,7 +21,7 @@ body{
 }
 .slider-wrapper{
     position: relative;
-    max-width: 48rem;
+    max-width: 480px;
     margin: 0 auto;
 }
 .slider{
@@ -35,6 +35,7 @@ body{
 }
 .slider img{
     flex: 1 0 100%;
+    max-width: 100%;
     scroll-snap-align: start;
     object-fit: cover;
 }
@@ -105,6 +106,8 @@ body{
     }
     .slider img{
         flex: 1 0 100%;
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
         scroll-snap-align: start;
         object-fit: cover;
     }
