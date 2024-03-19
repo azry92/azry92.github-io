@@ -27,7 +27,7 @@ body{
 .slider{
     display: flex;
     aspect-ratio: 16 / 9;
-    overflow-x: hidden;
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0, 0, 0.25);
@@ -52,7 +52,7 @@ body{
     height: 0.5rem;
     border-radius: 50%;
     background-color: #fff;
-    opacity: 0.75;
+    opacity: 0%;
     transition: opacity ease 250ms;
 }
 .slider-nav a:hover{
@@ -102,5 +102,10 @@ body{
     }
     .sequence-list p{
         font-size: 14px;
+    }
+    .slider img{
+        flex: 1 0 100%;
+        scroll-snap-align: start;
+        object-fit: cover;
     }
 }
