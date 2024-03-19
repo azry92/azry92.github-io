@@ -25,7 +25,6 @@ body{
     margin: 0 auto;
 }
 .slider{
-    display: -webkit-box;
     display: flex;
     aspect-ratio: 16 / 9;
     overflow-x: auto;
@@ -36,7 +35,6 @@ body{
 }
 .slider img{
     flex: 1 0 100%;
-    -webkit-box-flex: 0;
     scroll-snap-align: start;
     object-fit: cover;
 }
@@ -109,14 +107,5 @@ body{
         flex: 1 0 100%;
         scroll-snap-align: start;
         object-fit: cover;
-    }
-    .slider{
-        display: flex;
-        aspect-ratio: 16 / 9;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0, 0, 0.25);
-        border-radius: 0.5rem;
     }
 }
