@@ -103,4 +103,9 @@ body{
     .sequence-list p{
         font-size: 14px;
     }
+    .slider img{
+        flex: 1 0 100%;
+        scroll-snap-align: start;
+        object-fit: cover;
+    }
 }
