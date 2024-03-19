@@ -21,7 +21,7 @@ body{
 }
 .slider-wrapper{
     position: relative;
-    max-width: 48rem;
+    max-width: 480px;
     margin: 0 auto;
 }
 .slider{
